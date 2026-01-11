@@ -1,0 +1,17 @@
+Table categories {
+  id uuid [primary key, default: `gen_random_uuid()`]
+  name varchar(50) [not null]
+  color varchar(7) [not null, note: 'hex color code']
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+}
+
+Table activities {
+  id uuid [primary key, default: `gen_random_uuid()`]
+  category_id uuid [not null, ref: > categories.id]
+  date date [not null]
+  description text
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+}
+
