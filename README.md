@@ -5,6 +5,7 @@
 사소한 습관도 데이터로 축적될 때 강력한 동기부여가 됩니다. 스스로를 응원하고, 작심삼일을 꾸준함으로 바꾸는 경험을 시작해 보세요.
 
 **주요 기능:**
+
 - 활동 기록 및 카테고리 관리
 - GitHub 잔디 스타일의 시각화
 
@@ -18,20 +19,19 @@ DB 스키마를 Single Source of Truth로 정의하고, Drizzle-Zod를 활용해
 
 **Trade-off**: 초기 설정 비용이 있지만, 장기적으로 타입 안전성과 개발 속도를 향상시킵니다.
 
-
 ### 2. Logic Separation: Headless UI Pattern
 
 UI 컴포넌트가 비즈니스 로직에 얽매이지 않도록 분리합니다.
 
 **Why**: 뷰가 바뀌어도 로직은 보존되며, 순수 비즈니스 로직에 대한 독립적인 유닛 테스트가 가능합니다.
 
-
 ### 3. Layered Directory Strategy
 
 관심사를 계층별로 분리하여 코드의 위치를 예측 가능하게 관리합니다.
-* **`lib/api`**: 도메인과 무관한 통신 원칙(Retry, API Client) 정의
-* **`features/`**: 특정 도메인(Activity, Category)의 비즈니스 로직, 컴포넌트, 훅을 응집력 있게 관리
-* **`components/ui`**: `shadcn/ui` 기반의 원자(Atomic) 단위 컴포넌트 레이어
+
+- **`lib/api`**: 도메인과 무관한 통신 원칙(Retry, API Client) 정의
+- **`features/`**: 특정 도메인(Activity, Category)의 비즈니스 로직, 컴포넌트, 훅을 응집력 있게 관리
+- **`components/ui`**: `shadcn/ui` 기반의 원자(Atomic) 단위 컴포넌트 레이어
 
 **Why**: FSD의 핵심 원리만 차용하여 feature 간 응집성을 높이고, 도메인 로직과 UI를 분리하여 재사용성과 테스트 용이성을 확보합니다.
 
