@@ -42,8 +42,8 @@ UI 컴포넌트가 비즈니스 로직에 얽매이지 않도록 분리합니다
 ### Phase 1: Core Foundation (In-Progress)
 
 - [x] Neon DB 셋업, Drizzle 스키마 설정
-- [ ] `drizzle-zod`로 타입 자동 생성
-- [ ] Next.js API Routes를 활용한 Type-safe API 레이어 구축
+- [x] `drizzle-zod`로 타입 자동 생성
+- [x] Next.js API Routes를 활용한 Type-safe API 레이어 구축
 - [ ] DB-to-UI 자동 타입 추론
 
 ---

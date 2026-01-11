@@ -22,3 +22,7 @@ export type UpdateCategory = z.infer<typeof updateCategorySchema>;
 export type Activity = z.infer<typeof selectActivitySchema>;
 export type InsertActivity = z.infer<typeof insertActivitySchema>;
 export type UpdateActivity = z.infer<typeof updateActivitySchema>;
+
+export type ActivityWithCategory = Activity & {
+  category: Category | null;
+};
