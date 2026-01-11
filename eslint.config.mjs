@@ -3,10 +3,12 @@ import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
+import tseslint from 'typescript-eslint';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  ...tseslint.configs.strict,
   {
     plugins: {
       import: importPlugin,
