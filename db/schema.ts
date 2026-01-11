@@ -14,7 +14,10 @@ export const categories = pgTable('categories', {
   name: varchar('name', { length: 50 }).notNull(),
   color: varchar('color', { length: 7 }).notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
-  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at')
+    .defaultNow()
+    .notNull()
+    .$onUpdate(() => new Date()),
 });
 
 // 활동 기록 테이블
@@ -26,7 +29,10 @@ export const activities = pgTable('activities', {
   date: date('date').notNull(),
   description: text('description'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
-  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at')
+    .defaultNow()
+    .notNull()
+    .$onUpdate(() => new Date()),
 });
 
 // 관계 정의
